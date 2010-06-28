@@ -1,15 +1,9 @@
-# impojure
+Take a look at the contents of a class file:
 
-FIXME: write description
+(use 'impojure.class.read)
+(use 'clojure.inspector)
 
-## Usage
-
-FIXME: write
-
-## Installation
-
-FIXME: write
-
-## License
-
-FIXME: write
+(with-open [in (-> "/path/to/File.class"
+                   java.io.FileInputStream.
+                   java.io.DataInputStream.)]
+  (inspect-tree (read-class in)))
